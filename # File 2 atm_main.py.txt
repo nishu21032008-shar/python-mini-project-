@@ -1,0 +1,33 @@
+# File 2: atm_main.py
+import atm_logic as atm
+
+def atm_menu():
+    while True:
+        print("\n--- ATM SIMULATION ---")
+        print("1. Check Balance")
+        print("2. Deposit Money")
+        print("3. Withdraw Money")
+        print("4. Mini Statement")
+        print("5. Exit")
+        
+        choice = input("Choose an option (1-5): ")
+        
+        if choice == '1':
+            print(atm.check_balance())
+        elif choice == '2':
+            amt = float(input("Enter amount to deposit: "))
+            print(atm.deposit(amt))
+        elif choice == '3':
+            amt = float(input("Enter amount to withdraw: "))
+            print(atm.withdraw(amt))
+        elif choice == '4':
+            print("\n--- Transaction Record ---")
+            print(atm.show_statement())
+        elif choice == '5':
+            print("Thank you for using our ATM. Goodbye!")
+            break
+        else:
+            print("Invalid choice, please try again.")
+
+if __name__ == "__main__":
+    atm_menu()
